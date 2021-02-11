@@ -276,7 +276,7 @@ bar {
  position top
  font pango:JetBrains Mono 10
  status_command ~/.config/bumblebee-status/bumblebee-status \
- -m cpu memory kernel hostname pacman datetime battery-upower pasource pasink\
+ -m cpu memory kernel pacman datetime battery-upower pasource pasink\
  -t nord-powerline
 }
 # Keybinding for lock
