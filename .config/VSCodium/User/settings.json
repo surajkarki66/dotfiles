@@ -1,5 +1,7 @@
 {
     "workbench.colorTheme": "Night Owl",
     "workbench.iconTheme": "material-icon-theme",
-    "editor.fontLigatures": null
+    "editor.fontLigatures": null,
+    "editor.codeActionsOnSave": true,
+    "editor.formatOnSave": true
 }
