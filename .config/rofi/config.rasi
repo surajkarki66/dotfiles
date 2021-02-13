@@ -1,4 +1,4 @@
 configuration {
-	theme: "/usr/share/rofi/themes/Arc-Dark.rasi";
+	theme: "/usr/share/rofi/themes/dmenu.rasi";
 }
-@import "/usr/share/rofi/themes/nord.rasi"
+@import "/usr/share/rofi/themes/dmenu.rasi"
