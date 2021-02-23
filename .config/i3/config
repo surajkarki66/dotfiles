@@ -107,10 +107,10 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -273,8 +273,9 @@ bar {
  position top
  font pango:JetBrains Mono 10
  status_command /usr/bin/bumblebee-status \
- -m cpu memory kernel pacman datetime battery-upower pasource pasink dunst\
- -t nord-powerline
+ -m cpu memory pacman kernel date time battery-upower pasource pasink dunst\
+ -p root.path=/ time.format="%H:%M" date.format="%a, %b %d %Y" \
+ -t solarized-powerline
 }
 
 
@@ -315,3 +316,8 @@ exec --no-startup-id nm-applet
 
 # Dunst
 exec --no-startup-id dunstwal
+
+
+# Picom
+exec picom -CGb & 
+
