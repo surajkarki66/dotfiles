@@ -188,6 +188,7 @@ for_window [class="^.*"] border pixel 2
 ### settings for i3-gaps: ###
 #############################
 
+
 # Set inner/outer gaps
 gaps inner 10
 gaps outer -4
@@ -244,7 +245,6 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 
 # Window Colors
 set $bgcolor	#00897b33
