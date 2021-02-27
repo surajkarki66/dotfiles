@@ -183,6 +183,11 @@ bindsym $mod+r mode "resize"
 
 # Disable window titlebars entirely
 for_window [class="^.*"] border pixel 2
+for_window [class="vlc"] floating enable
+for_window [class="kdenlive"] floating enable
+for_window [class="kdenlive"] resize set 2500 1920
+for_window [class="kdenlive"] move position center
+
 
 #############################
 ### settings for i3-gaps: ###
@@ -295,6 +300,8 @@ bindsym $mod+Delete exec rofi -modi system:$HOME/.config/rofi/scripts/powermenu.
 # Keybinding for lock
 bindsym $mod+x exec $HOME/.config/scripts/lock
 
+# Picom
+exec picom -CGb & 
 
 
 # AUTO START APPLICATION
