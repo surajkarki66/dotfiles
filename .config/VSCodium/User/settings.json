@@ -3,5 +3,22 @@
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontLigatures": null,
     "editor.codeActionsOnSave": true,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.userWords": [
+        "DAOs",
+        "Glasir",
+        "Karki",
+        "MESSAGEBIRD",
+        "Suraj",
+        "bson",
+        "libphonenumber",
+        "mailgun",
+        "middlewares",
+        "unprocessable"
+    ],
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "kite.showWelcomeNotificationOnStartup": false
 }
