@@ -1,7 +1,8 @@
 {
     "workbench.colorTheme": "Night Owl",
     "workbench.iconTheme": "material-icon-theme",
-    "editor.fontLigatures": null,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
     "editor.codeActionsOnSave": true,
     "editor.formatOnSave": true,
     "[javascript]": {
@@ -9,18 +10,33 @@
     },
     "cSpell.userWords": [
         "ACTIVATIONEMAIL",
+        "Cheadle",
         "DAOs",
         "Glasir",
+        "Idata",
         "Karki",
         "MESSAGEBIRD",
+        "NODEMAIL",
         "Suraj",
         "bson",
+        "camelcase",
         "libphonenumber",
         "mailgun",
+        "maxsize",
         "middlewares",
+        "originalname",
+        "pickurpage",
+        "printf",
         "tlds",
+        "typegoose",
         "unprocessable"
     ],
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "kite.showWelcomeNotificationOnStartup": false
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
