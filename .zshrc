@@ -98,7 +98,8 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
