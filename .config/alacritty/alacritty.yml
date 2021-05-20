@@ -507,7 +507,7 @@ debug:
   #   - Info
   #   - Debug
   #   - Trace
-  log_level: Warn
+  log_level: INFO
 
   # Print all received window events.
   print_events: false
