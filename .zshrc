@@ -128,3 +128,6 @@ alias spotifymusic='LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify'
 # Git alias
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# xampp
+alias xamppstart='sudo /opt/lampp/lampp start'
+alias xamppstop='sudo /opt/lampp/lampp stop'
