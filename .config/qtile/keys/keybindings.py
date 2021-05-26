@@ -81,7 +81,7 @@ class Keybindings:
 
             # Applications hotkeys
             # Most apps are opened with Super + left self.alt keys
-            Key([self.mod, self.alt], "d", lazy.spawn(
+            Key([self.mod, self.alt], "e", lazy.spawn(
                 "emacs"), desc="Open Doom Emacs"),
             Key([self.mod, self.alt], "b", lazy.spawn(
                 "brave"), desc="Open Brave"),
@@ -89,12 +89,19 @@ class Keybindings:
                 "codium"), desc="Open VS codium"),
             Key([self.mod, self.alt], "a", lazy.spawn("pavucontrol"),
                 desc="Open Pulse audio GUI controller"),
-            Key([self.mod, self.alt], "e", lazy.spawn("emacs .config/qtile/config.py"),
-                desc="Open Qtile config file in doom emacs"),
-            Key([self.mod], "b", lazy.spawn(
-                "LD_PRELOAD=/usr/local/lib/spotify-adblock.so"), desc="Block spotify ads"),
             Key([self.mod, self.alt], "s", lazy.spawn(
-                "spotify"), desc="Open Spotify"),
+                "signal-desktop"), desc="Open Signal"),
+            Key([self.mod, self.alt], "d", lazy.spawn(
+                "discord"
+            ), desc="Open Discord"),
+            Key([self.mod, self.alt], "n", lazy.spawn(
+                "nautilus"
+            ), desc="Open Nautilus file browser"),
+            Key([self.mod, self.alt], "i", lazy.spawn(
+                "insomnia"
+            ), desc="Open Insomnia"),
+            Key([self.mod], "s", lazy.spawn(
+                "spotifymusic"), desc="Open Spotify"),
 
             # PWA hotkeys
 

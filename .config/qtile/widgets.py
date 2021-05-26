@@ -180,7 +180,7 @@ class MyWidgets:
                 background=self.colors[0],
                 display_format='{updates}',
                 colour_have_updates='FFAA00',
-                distro="Arch",
+                distro="Arch_checkupdates",
             ),
             widget.TextBox(
                 text='',
