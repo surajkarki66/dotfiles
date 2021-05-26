@@ -122,6 +122,9 @@ unset __conda_setup
 # ncmpcpp
 alias music='ncmpcpp'
 
+# spotify
+alias spotifymusic='LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify'
+
 # Git alias
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
