@@ -2,12 +2,18 @@ from libqtile import layout
 
 
 class Layouts:
+    """
+        Layout of Qtile
+
+    """
+
     def __init__(self):
         self.default = {
-            "border_width": 2,
-            "margin": 8,
+            "border_width": 1,
+            "margin": 6,
             "border_focus": "#668bd7",
-            "border_normal": "1D2330"}
+            "border_normal": "1D2330"
+        }
 
     def init_layouts(self):
         """
@@ -17,12 +23,14 @@ class Layouts:
             layout.Max(**self.default),
             layout.MonadTall(**self.default),
             layout.floating.Floating(**self.default),
+            layout.Stack(num_stacks=2),
+            layout.RatioTile(**self.default),
             layout.TreeTab(
                 font="JetBrains Mono",
-                fontsize=10,
+                fontsize=9,
                 sections=["FIRST", "SECOND", "THIRD", "FOURTH"],
-                section_fontsize=10,
-                border_width=2,
+                section_fontsize=9,
+                border_width=3,
                 bg_color="1c1f24",
                 active_bg="c678dd",
                 active_fg="000000",

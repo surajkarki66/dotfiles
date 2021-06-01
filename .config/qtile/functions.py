@@ -51,14 +51,5 @@ class Functions:
         return __inner
 
 
-class PWA:
-    def __init__(self):
-        pass
-
-    @staticmethod
-    def calendar():
-        return "/usr/lib/brave-beta/brave --profile-directory=Default --app-id=kjbdgfilnfhdoflbpgamdcdgpehopbep"
-
-
 if __name__ == "__main__":
     pass

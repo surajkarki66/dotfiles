@@ -22,6 +22,7 @@ if __name__ in ["config", "__main__"]:
     obj_widgets = MyWidgets()
     obj_layouts = Layouts()
     obj_groups = CreateGroups()
+
     # Initializes qtile variables
     keys = obj_keys.init_keys()
     mouse = obj_mouse.init_mouse()
@@ -32,7 +33,6 @@ if __name__ in ["config", "__main__"]:
     keys += obj_keys.init_keys_groups(group_icons)
 
     ### DISPLAYS WIDGETS IN THE SCREEN ####
-
     screens = obj_widgets.init_screen()
     main_widgets_list = obj_widgets.init_widgets_list()
     widgets_screen1 = obj_widgets.init_widgets_screen()

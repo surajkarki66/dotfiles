@@ -16,4 +16,5 @@ function run {
 run picom --experimental-backend &
 run nitrogen --restore & 
 run xfce4-clipman &
+run cbatticon -u 2 -l 30 -r 20 -n &
 run nm-applet

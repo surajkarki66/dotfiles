@@ -2,7 +2,7 @@ from libqtile.config import Click, Drag, Key
 from libqtile.lazy import lazy
 
 # Import the function that move the window to the next and prev group
-from functions import Functions, PWA
+from functions import Functions
 # Import default mod keys
 from keys.default import *
 
@@ -103,11 +103,6 @@ class Keybindings:
             Key([self.mod], "s", lazy.spawn(
                 "spotifymusic"), desc="Open Spotify"),
 
-            # PWA hotkeys
-
-            Key([self.mod, self.alt], "t",
-                lazy.spawn(PWA.calendar()),
-                desc="Open Calendar PWA"),
 
 
             # Media hotkeys
@@ -145,10 +140,9 @@ class Keybindings:
         Create bindings to move between groups
         """
         keys = []
-        for icon in group_names:
-            index = (icon[0])
-            keys += [Key([self.mod], index, lazy.group[icon].toscreen()), Key(
-                [self.mod, 'shift'], index, lazy.window.togroup(icon, switch_group=True))]
+        for i, icon in enumerate(group_names, 1):
+            keys += [Key([self.mod], str(i), lazy.group[icon].toscreen()), Key(
+                [self.mod, 'shift'], str(i), lazy.window.togroup(icon, switch_group=True))]
 
         return keys
 
