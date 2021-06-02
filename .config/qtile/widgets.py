@@ -188,7 +188,15 @@ class MyWidgets:
                 background=self.colors[0],
                 padding=5
             ),
-
+            widget.Battery(background=self.colors[0],
+                           padding=5,
+                           format='{char}  {percent:2.0%}  {hour:d}:{min:02d}',
+                           charge_char='CHR',
+                           discharge_char='DIS',
+                           empty_char='EMP',
+                           full_char='FUL',
+                           unknown_char='UNK'
+                           ),
             widget.Systray(
                 background=self.colors[0],
                 padding=5
