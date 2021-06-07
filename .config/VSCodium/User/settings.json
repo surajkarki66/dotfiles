@@ -10,6 +10,7 @@
     },
     "cSpell.userWords": [
         "ACTIVATIONEMAIL",
+        "ALTGR",
         "Cheadle",
         "DAOs",
         "Glasir",
@@ -17,9 +18,18 @@
         "Karki",
         "MESSAGEBIRD",
         "NODEMAIL",
+        "Popconfirm",
+        "Qtile",
+        "Sider",
         "Suraj",
+        "antd",
+        "appication",
+        "asynciterable",
         "bson",
         "camelcase",
+        "distro",
+        "dotfiles",
+        "gmail",
         "libphonenumber",
         "mailgun",
         "maxsize",
@@ -27,7 +37,11 @@
         "originalname",
         "pickurpage",
         "printf",
+        "resave",
+        "signup",
+        "socketio",
         "tlds",
+        "toscreen",
         "typegoose",
         "unprocessable"
     ],
@@ -38,5 +52,9 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.confirmDragAndDrop": false
 }
