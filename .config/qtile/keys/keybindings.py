@@ -100,6 +100,9 @@ class Keybindings:
             Key([self.mod, self.alt], "i", lazy.spawn(
                 "insomnia"
             ), desc="Open Insomnia"),
+            Key([self.mod, self.alt], "r", lazy.spawn(
+                self.terminal + " ranger"
+            ), desc="Open Ranger file manager"),
             Key([self.mod], "s", lazy.spawn(
                 "spotifymusic"), desc="Open Spotify"),
 
