@@ -95,6 +95,7 @@ from collections import deque
 import os
 import re
 
+from ranger.core.loader import CommandLoader
 from ranger.api.commands import Command
 
 
@@ -287,7 +288,8 @@ class chain(Command):
 
     def execute(self):
         if not self.rest(1).strip():
-            self.fm.notify('Syntax: chain <command1>; <command2>; ...', bad=True)
+            self.fm.notify(
+                'Syntax: chain <command1>; <command2>; ...', bad=True)
             return
         for command in [s.strip() for s in self.rest(1).split(";")]:
             self.fm.execute_console(command)
@@ -577,9 +579,11 @@ class quit(Command):  # pylint: disable=redefined-builtin
     Closes the current tab, if there's more than one tab.
     Otherwise quits if there are no tasks in progress.
     """
+
     def _exit_no_work(self):
         if self.fm.loader.has_work():
-            self.fm.notify('Not quitting: Tasks in progress: Use `quit!` to force quit')
+            self.fm.notify(
+                'Not quitting: Tasks in progress: Use `quit!` to force quit')
         else:
             self.fm.exit()
 
@@ -611,9 +615,11 @@ class quitall(Command):
 
     Quits if there are no tasks in progress.
     """
+
     def _exit_no_work(self):
         if self.fm.loader.has_work():
-            self.fm.notify('Not quitting: Tasks in progress: Use `quitall!` to force quit')
+            self.fm.notify(
+                'Not quitting: Tasks in progress: Use `quitall!` to force quit')
         else:
             self.fm.exit()
 
@@ -675,12 +681,14 @@ class delete(Command):
             cwd = self.fm.thisdir
             tfile = self.fm.thisfile
             if not cwd or not tfile:
-                self.fm.notify("Error: no file selected for deletion!", bad=True)
+                self.fm.notify(
+                    "Error: no file selected for deletion!", bad=True)
                 return
 
             # relative_path used for a user-friendly output in the confirmation.
             files = [f.relative_path for f in self.fm.thistab.get_selection()]
-            many_files = (cwd.marked_items or is_directory_with_files(tfile.path))
+            many_files = (
+                cwd.marked_items or is_directory_with_files(tfile.path))
 
         confirm = self.fm.settings.confirm_on_delete
         if confirm != 'never' and (confirm != 'multiple' or many_files):
@@ -733,12 +741,14 @@ class trash(Command):
             cwd = self.fm.thisdir
             tfile = self.fm.thisfile
             if not cwd or not tfile:
-                self.fm.notify("Error: no file selected for deletion!", bad=True)
+                self.fm.notify(
+                    "Error: no file selected for deletion!", bad=True)
                 return
 
             # relative_path used for a user-friendly output in the confirmation.
             files = [f.relative_path for f in self.fm.thistab.get_selection()]
-            many_files = (cwd.marked_items or is_directory_with_files(tfile.path))
+            many_files = (
+                cwd.marked_items or is_directory_with_files(tfile.path))
 
         confirm = self.fm.settings.confirm_on_delete
         if confirm != 'never' and (confirm != 'multiple' or many_files):
@@ -768,6 +778,7 @@ class jump_non(Command):
      -r    Jump in reverse order
      -w    Wrap around if reaching end of filelist
     """
+
     def __init__(self, *args, **kwargs):
         super(jump_non, self).__init__(*args, **kwargs)
 
@@ -1042,6 +1053,7 @@ class rename_append(Command):
      -a    Position before all extensions
      -r    Remove everything before extensions
     """
+
     def __init__(self, *args, **kwargs):
         super(rename_append, self).__init__(*args, **kwargs)
 
@@ -1053,7 +1065,8 @@ class rename_append(Command):
         from ranger import MACRO_DELIMITER, MACRO_DELIMITER_ESC
 
         tfile = self.fm.thisfile
-        relpath = tfile.relative_path.replace(MACRO_DELIMITER, MACRO_DELIMITER_ESC)
+        relpath = tfile.relative_path.replace(
+            MACRO_DELIMITER, MACRO_DELIMITER_ESC)
         basename = tfile.basename.replace(MACRO_DELIMITER, MACRO_DELIMITER_ESC)
 
         if basename.find('.') <= 0 or os.path.isdir(relpath):
@@ -1400,7 +1413,8 @@ class map_(Command):
 
     def execute(self):
         if not self.arg(1) or not self.arg(2):
-            self.fm.notify("Syntax: {0} <keysequence> <command>".format(self.get_name()), bad=True)
+            self.fm.notify("Syntax: {0} <keysequence> <command>".format(
+                self.get_name()), bad=True)
             return
 
         self.fm.ui.keymaps.bind(self.context, self.arg(1), self.rest(2))
@@ -1459,20 +1473,20 @@ class scout(Command):
     a :filter-like command using globbing.
     """
     # pylint: disable=bad-whitespace
-    AUTO_OPEN     = 'a'
+    AUTO_OPEN = 'a'
     OPEN_ON_ENTER = 'e'
-    FILTER        = 'f'
-    SM_GLOB       = 'g'
-    IGNORE_CASE   = 'i'
-    KEEP_OPEN     = 'k'
+    FILTER = 'f'
+    SM_GLOB = 'g'
+    IGNORE_CASE = 'i'
+    KEEP_OPEN = 'k'
     SM_LETTERSKIP = 'l'
-    MARK          = 'm'
-    UNMARK        = 'M'
-    PERM_FILTER   = 'p'
-    SM_REGEX      = 'r'
-    SMART_CASE    = 's'
-    AS_YOU_TYPE   = 't'
-    INVERT        = 'v'
+    MARK = 'm'
+    UNMARK = 'M'
+    PERM_FILTER = 'p'
+    SM_REGEX = 'r'
+    SMART_CASE = 's'
+    AS_YOU_TYPE = 't'
+    INVERT = 'v'
     # pylint: enable=bad-whitespace
 
     def __init__(self, *args, **kwargs):
@@ -1628,6 +1642,7 @@ class narrow(Command):
     Show only the files selected right now. If no files are selected,
     disable narrowing.
     """
+
     def execute(self):
         if self.fm.thisdir.marked_items:
             selection = [f.basename for f in self.fm.thistab.get_selection()]
@@ -1670,6 +1685,7 @@ class filter_stack(Command):
         filter_stack clear
         filter_stack show
     """
+
     def execute(self):
         from ranger.core.filter_stack import SIMPLE_FILTERS, FILTER_COMBINATORS
 
@@ -1757,6 +1773,7 @@ class reset_previews(Command):
 
     Reset the file previews.
     """
+
     def execute(self):
         self.fm.previews = {}
         self.fm.ui.need_redraw = True
@@ -1991,3 +2008,66 @@ class paste_ext(Command):
 
     def execute(self):
         return self.fm.paste(make_safe_path=paste_ext.make_safe_path)
+
+
+class extract_here(Command):
+    def execute(self):
+        """ extract selected files to current directory."""
+        cwd = self.fm.thisdir
+        marked_files = tuple(cwd.get_selection())
+
+        def refresh(_):
+            cwd = self.fm.get_directory(original_path)
+            cwd.load_content()
+
+        one_file = marked_files[0]
+        cwd = self.fm.thisdir
+        original_path = cwd.path
+        au_flags = ['-x', cwd.path]
+        au_flags += self.line.split()[1:]
+        au_flags += ['-e']
+
+        self.fm.copy_buffer.clear()
+        self.fm.cut_buffer = False
+        if len(marked_files) == 1:
+            descr = "extracting: " + os.path.basename(one_file.path)
+        else:
+            descr = "extracting files from: " + os.path.basename(
+                one_file.dirname)
+        obj = CommandLoader(args=['aunpack'] + au_flags
+                            + [f.path for f in marked_files], descr=descr,
+                            read=True)
+
+        obj.signal_bind('after', refresh)
+        self.fm.loader.add(obj)
+
+
+class compress(Command):
+    def execute(self):
+        """ Compress marked files to current directory """
+        cwd = self.fm.thisdir
+        marked_files = cwd.get_selection()
+
+        if not marked_files:
+            return
+
+        def refresh(_):
+            cwd = self.fm.get_directory(original_path)
+            cwd.load_content()
+
+        original_path = cwd.path
+        parts = self.line.split()
+        au_flags = parts[1:]
+
+        descr = "compressing files in: " + os.path.basename(parts[1])
+        obj = CommandLoader(args=['apack'] + au_flags +
+                            [os.path.relpath(f.path, cwd.path) for f in marked_files], descr=descr, read=True)
+
+        obj.signal_bind('after', refresh)
+        self.fm.loader.add(obj)
+
+    def tab(self, tabnum):
+        """ Complete with current folder name """
+
+        extension = ['.zip', '.tar.gz', '.rar', '.7z']
+        return ['compress ' + os.path.basename(self.fm.thisdir.path) + ext for ext in extension]
