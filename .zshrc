@@ -7,7 +7,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/surajkarki/.oh-my-zsh"
@@ -101,22 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/surajkarki/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/surajkarki/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/surajkarki/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/surajkarki/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # Custom Alias:
 
 # ncmpcpp
@@ -131,3 +115,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # xampp
 alias xamppstart='sudo /opt/lampp/lampp start'
 alias xamppstop='sudo /opt/lampp/lampp stop'
+
+# alias for extracting files
+alias extract="/bin/extract"
