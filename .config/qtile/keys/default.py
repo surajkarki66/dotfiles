@@ -6,7 +6,7 @@ ALT = "mod1"
 ALTGR = "mod5"
 SHIFT = "shift"
 CONTROL = "control"
-TERMINAL = "kitty"
+TERMINAL = "alacritty"
 
 # Basic wm bindings
 
