@@ -639,16 +639,6 @@ class quitall_bang(Command):
         self.fm.exit()
 
 
-class terminal(Command):
-    """:terminal
-
-    Spawns an "x-terminal-emulator" starting in the current directory.
-    """
-
-    def execute(self):
-        from ranger.ext.get_executables import get_term
-        self.fm.run(get_term(), flags='f')
-
 
 class delete(Command):
     """:delete
