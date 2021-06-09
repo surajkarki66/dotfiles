@@ -70,9 +70,9 @@ scrolling:
 font:
   normal:
     family: Fira Code
-    style: Medium
+    #style: Medium
   #bold:
-    #family: JetBrains Mono
+   # family: JetBrains Mono
     #style:
 
   # Italic font face
