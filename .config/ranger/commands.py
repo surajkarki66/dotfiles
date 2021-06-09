@@ -72,6 +72,4 @@ class terminal(Command):  # pylint: disable = invalid-name
     And removes RANGER_LEVEL from env, for the new terminal.
     """
     def execute(self):
-        self.fm.run("kitty"+ """ -e $SHELL -c "unset -v RANGER_LEVEL && $SHELL" """, flags='f')
-
-       
+        self.fm.run("alacritty"+ """ -e $SHELL -c "unset -v RANGER_LEVEL && $SHELL" """, flags='f')
