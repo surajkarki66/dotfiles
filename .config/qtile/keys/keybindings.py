@@ -83,8 +83,8 @@ class Keybindings:
             # Most apps are opened with Super + left self.alt keys
             Key([self.mod, self.alt], "e", lazy.spawn(
                 "emacs"), desc="Open Doom Emacs"),
-            Key([self.mod, self.alt], "b", lazy.spawn(
-                "brave"), desc="Open Brave"),
+            Key([self.mod, self.alt], "l", lazy.spawn(
+                "librewolf"), desc="Open Librewolf"),
             Key([self.mod, self.alt], "v", lazy.spawn(
                 "codium"), desc="Open VS codium"),
             Key([self.mod, self.alt], "a", lazy.spawn("pavucontrol"),
