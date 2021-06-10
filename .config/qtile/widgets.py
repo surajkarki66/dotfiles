@@ -195,7 +195,8 @@ class MyWidgets:
                            discharge_char='DIS',
                            empty_char='EMP',
                            full_char='FUL',
-                           unknown_char='UNK'
+                           unknown_char='UNK',
+                           update_interval='5',
                            ),
             widget.Systray(
                 background=self.colors[0],
