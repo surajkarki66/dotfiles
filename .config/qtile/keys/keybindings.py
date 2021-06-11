@@ -105,7 +105,9 @@ class Keybindings:
             ), desc="Open Ranger file manager"),
             Key([self.mod], "s", lazy.spawn(
                 "spotifymusic"), desc="Open Spotify"),
-
+            Key([self.mod], "p", lazy.spawn(
+                "passmenu"
+            ), desc="Open passmenu"),
 
 
             # Media hotkeys
