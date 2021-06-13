@@ -19,7 +19,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Editor
-export EDITOR="alacritty"
+export EDITOR="gedit"
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -62,9 +62,6 @@ alias spotifymusic='LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify'
 # Git alias
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# xampp
-alias xamppstart='sudo /opt/lampp/lampp start'
-alias xamppstop='sudo /opt/lampp/lampp stop'
 
 # alias for extracting files
 alias extract="/bin/extract"
