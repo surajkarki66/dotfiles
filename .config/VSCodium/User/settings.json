@@ -21,6 +21,7 @@
         "Popconfirm",
         "Qtile",
         "Sider",
+        "Signin",
         "Suraj",
         "antd",
         "appication",
@@ -32,10 +33,12 @@
         "gmail",
         "libphonenumber",
         "mailgun",
+        "maxlength",
         "maxsize",
         "middlewares",
         "originalname",
         "pickurpage",
+        "postbuild",
         "printf",
         "resave",
         "signup",
@@ -43,7 +46,8 @@
         "tlds",
         "toscreen",
         "typegoose",
-        "unprocessable"
+        "unprocessable",
+        "updatepredicted"
     ],
     "javascript.updateImportsOnFileMove.enabled": "always",
     "[typescript]": {
